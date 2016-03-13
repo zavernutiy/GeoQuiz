@@ -21,6 +21,7 @@ public class CheatActivity extends AppCompatActivity {
 
     private TextView mAnswerTextView;
     private Button mShowAnswer;
+    private TextView mAPITextView;
 
     private boolean mIsCheater;
 
@@ -65,6 +66,10 @@ public class CheatActivity extends AppCompatActivity {
                 }
             }
         });
+
+        mAPITextView = (TextView) findViewById(R.id.api_level_text_view);
+        String apiLevel = getString(R.string.api_level) + " " + Build.VERSION.SDK_INT;
+        mAPITextView.setText(apiLevel);
 
         if (savedInstanceState != null) {
             mIsCheater = savedInstanceState.getBoolean(EXTRA_ANSWER_SHOWN, false);
